@@ -1,7 +1,11 @@
 /* ================================
    Page
 ================================ */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .body {
   min-height: 100vh;
   width: 100%;
@@ -29,16 +33,11 @@
   color: #f5f5f7;
 
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "SF Pro Text",
-    "Segoe UI",
-    sans-serif;
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Segoe UI", sans-serif;
 
   overflow: hidden;
 }
-
 
 /* ================================
    Quote Card
@@ -77,7 +76,6 @@
     box-shadow 0.45s ease;
 }
 
-
 /* Subtle top highlight */
 
 .quotesCard::before {
@@ -97,7 +95,6 @@
     transparent
   );
 }
-
 
 /* ================================
    Quote
@@ -119,7 +116,6 @@
   text-wrap: balance;
 }
 
-
 /* ================================
    Author
 ================================ */
@@ -136,7 +132,6 @@
   color: #a1a1aa;
 }
 
-
 /* ================================
    Hover
 ================================ */
@@ -148,7 +143,6 @@
     0 40px 100px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-
 
 /* ================================
    Loader
@@ -165,10 +159,8 @@
 
   border-radius: 50%;
 
-  animation:
-    spin 0.75s linear infinite;
+  animation: spin 0.75s linear infinite;
 }
-
 
 /* ================================
    Animation
@@ -179,7 +171,6 @@
     transform: rotate(360deg);
   }
 }
-
 
 /* ================================
    Mobile
@@ -208,7 +199,6 @@
     font-size: 15px;
   }
 }
-
 
 /* ================================
    Reduced Motion
