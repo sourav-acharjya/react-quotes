@@ -1,93 +1,88 @@
-/* ================================
-   Page
-================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .body {
   min-height: 100vh;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 24px;
-  box-sizing: border-box;
-
   background:
     radial-gradient(
-      circle at 15% 15%,
-      rgba(99, 102, 241, 0.18),
-      transparent 35%
+      circle at 10% 10%,
+      rgba(239, 68, 68, 0.14),
+      transparent 30%
     ),
     radial-gradient(
-      circle at 85% 85%,
-      rgba(14, 165, 233, 0.14),
-      transparent 35%
+      circle at 90% 90%,
+      rgba(99, 102, 241, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.025),
+      transparent 45%
     ),
     #050505;
-
   color: #f5f5f7;
-
   font-family:
     -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Segoe UI", sans-serif;
-
-  overflow: hidden;
 }
-
-/* ================================
-   Quote Card
-================================ */
 
 .quotesCard {
   position: relative;
-
-  width: min(680px, 100%);
-  min-height: 360px;
-
+  width: min(720px, 100%);
+  min-height: 380px;
+  padding: 72px 64px 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  padding: 64px 56px;
-  box-sizing: border-box;
-
-  text-align: center;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 32px;
-
-  background: rgba(255, 255, 255, 0.055);
-
-  backdrop-filter: blur(30px) saturate(140%);
-  -webkit-backdrop-filter: blur(30px) saturate(140%);
-
+  border-radius: 28px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.025)
+  );
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-
+    0 35px 90px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025);
+  overflow: hidden;
   transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.45s ease;
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
-/* Subtle top highlight */
-
 .quotesCard::before {
-  content: "";
+  content: "❝";
+  position: absolute;
+  top: 22px;
+  left: 42px;
+  font-family: Georgia, serif;
+  font-size: 78px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ef4444;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 14px rgba(239, 68, 68, 0.2));
+}
 
+.quotesCard::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 12%;
-  right: 12%;
-
+  width: 76%;
   height: 1px;
-
   background: linear-gradient(
     90deg,
     transparent,
@@ -96,75 +91,59 @@
   );
 }
 
-/* ================================
-   Quote
-================================ */
+.quotesCard:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 45px 110px rgba(0, 0, 0, 0.58),
+    0 0 60px rgba(239, 68, 68, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
 
 .quotesCard h1 {
-  max-width: 580px;
-
-  margin: 0;
-
-  font-size: clamp(28px, 5vw, 48px);
-  line-height: 1.16;
-
+  position: relative;
+  max-width: 610px;
+  margin: 20px 0 0;
+  font-size: clamp(28px, 4.5vw, 46px);
+  line-height: 1.2;
   font-weight: 600;
-  letter-spacing: -1.8px;
-
-  color: #f5f5f7;
-
+  letter-spacing: -1.7px;
+  color: #f8f8fa;
   text-wrap: balance;
 }
 
-/* ================================
-   Author
-================================ */
-
 .quotesCard p {
-  margin: 30px 0 0;
-
-  font-size: 17px;
+  position: relative;
+  margin: 28px 0 0;
+  font-size: 15px;
   line-height: 1.5;
-
   font-weight: 500;
-  letter-spacing: 0.2px;
-
+  letter-spacing: 0.3px;
   color: #a1a1aa;
 }
 
-/* ================================
-   Hover
-================================ */
-
-.quotesCard:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 40px 100px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.quotesCard p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 18px;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
 }
-
-/* ================================
-   Loader
-================================ */
 
 .loader {
-  width: 34px;
-  height: 34px;
-
-  margin: 20px auto;
-
-  border: 3px solid rgba(255, 255, 255, 0.12);
-  border-top-color: rgba(255, 255, 255, 0.9);
-
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #ef4444;
+  border-right-color: rgba(239, 68, 68, 0.35);
   border-radius: 50%;
-
   animation: spin 0.75s linear infinite;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.08);
 }
-
-/* ================================
-   Animation
-================================ */
 
 @keyframes spin {
   to {
@@ -172,37 +151,35 @@
   }
 }
 
-/* ================================
-   Mobile
-================================ */
-
 @media (max-width: 600px) {
   .body {
     padding: 16px;
   }
 
   .quotesCard {
-    min-height: 330px;
+    min-height: 340px;
+    padding: 70px 28px 42px;
+    border-radius: 24px;
+  }
 
-    padding: 48px 28px;
-
-    border-radius: 26px;
+  .quotesCard::before {
+    top: 20px;
+    left: 26px;
+    font-size: 64px;
   }
 
   .quotesCard h1 {
+    margin-top: 12px;
     font-size: clamp(25px, 8vw, 34px);
+    line-height: 1.22;
     letter-spacing: -1px;
   }
 
   .quotesCard p {
     margin-top: 24px;
-    font-size: 15px;
+    font-size: 14px;
   }
 }
-
-/* ================================
-   Reduced Motion
-================================ */
 
 @media (prefers-reduced-motion: reduce) {
   .quotesCard,
